@@ -15,7 +15,6 @@
 
         .table-wrapper {
             margin: 10px 20px 20px;
-            box-shadow: 0px 35px 40px rgba(16, 27, 180, 0.2);
         }
 
         .fl-table {
@@ -205,6 +204,9 @@
             };
 
             const formatTime = (time) => {
+                if (isNaN(time)) {
+                    return "+";
+                }
                 const minutes = Math.floor(time);
                 const seconds = Math.floor((time % 1) * 60);
                 return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
