@@ -60,7 +60,7 @@
 <body>
     <div>
         <div style="display: flex; align-items: center; margin-bottom: 30px;">
-            <select name="units" id="units" style="width: 130px; align-items: center; margin-right: 20px; height: 40px; border-radius: 30px;">
+            <select name="units" id="units" style="width: 160px; align-items: center; margin-right: 20px; height: 40px; border-radius: 30px;">
                 <option value="Metric">Metric</option>
                 <option value="English">English</option>
             </select>
@@ -81,6 +81,7 @@
             <p style="margin: 0 10px; display: inline-block;">Seconds</p>
             <input type="number" id="second" value="0" style="width: 100px; height: 20px; border-radius: 20px; padding: 10px; font-size: 16px; border: 1px solid #ccc; display: inline-block;">
         </div>
+        
         <div>
             <p id="pace">Pace 0:00</p>
         </div>
@@ -207,9 +208,6 @@
             };
 
             const formatTime = (time) => {
-                if (isNaN(time)) {
-                    return "+";
-                }
                 const minutes = Math.floor(time);
                 const seconds = Math.floor((time % 1) * 60);
                 return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
